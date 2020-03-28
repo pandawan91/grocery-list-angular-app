@@ -1,0 +1,24 @@
+<div class="card">
+    <form (ngSubmit)="onSubmit()">
+        <h1 className="h1">Grocery List</h1>
+        <div className="group form-group">      
+            <input 
+                name="name" 
+                type="text" 
+                [(ngModel)]="addGroceryListItemModel.name"
+                required />
+            <span className="highlight"></span>
+            <label>name</label>
+        </div>
+        <div className="group">      
+            <input 
+                name="quantity" 
+                type="number" 
+                [(ngModel)]="addGroceryListItemModel.quantity"
+                required />
+            <span className="highlight"></span>
+            <label>quantity</label>
+        </div>
+        <button class="button" type="submit">ADD</button>
+    </form>
+</div>>

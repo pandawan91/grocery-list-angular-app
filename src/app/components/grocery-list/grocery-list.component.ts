@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 import { GroceryListItemModel } from '../../models/GroceryListItemModel'
 import { GroceryListService } from '../../services/grocery-list.service'
@@ -9,15 +9,16 @@ import { GroceryListService } from '../../services/grocery-list.service'
   styleUrls: ['./grocery-list.component.css']
 })
 export class GroceryListComponent implements OnInit {
-  groceryListItemModel: GroceryListItemModel[]
+  @Input() groceryListItemModel: GroceryListItemModel[]
+  @Output() groceryListDeleteEvent: EventEmitter<GroceryListItemModel> = new EventEmitter();
+  
 
-  constructor(private groceryListService:GroceryListService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.groceryListItemModel = this.groceryListService.getGroceryListItems();
   }
 
   deleteGroceryListItem(item:GroceryListItemModel){
-    this.groceryListItemModel = this.groceryListItemModel.filter(x => x.id !== item.id);
+    this.groceryListDeleteEvent.emit(item);
   }
 }

@@ -1,0 +1,6 @@
+<app-add-grocery-list-item
+    (addGroceryListItemEmit)="addItem($event)"></app-add-grocery-list-item>
+<app-grocery-list 
+    [groceryListItemModel]="groceryListItemModel"
+    (groceryListDeleteEvent)="deleteItem($event)"></app-grocery-list>
+

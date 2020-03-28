@@ -1,5 +1,11 @@
 # GroceryListAngularApp
 
+This App is for evaluation purposes. You can add and delete items to the List.
+Build with the angular.
+
+check it out at https://grocery-list-angular-app.web.app/
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
 ## Development server
